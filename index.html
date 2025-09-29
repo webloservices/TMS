@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Service Center - Expert Device Repair & Support</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta
+      name="description"
+      content="Professional mobile device repair services with same-day turnaround. Expert technicians, genuine parts, and warranty protection. Visit our 2 convenient locations."
+    />
+    <meta
+      property="og:title"
+      content="Mobile Service Center - Expert Device Repair & Support"
+    />
+    <meta
+      property="og:description"
+      content="Professional mobile device repair services with same-day turnaround. Expert technicians, genuine parts, and warranty protection."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --background: #FFFFFF;
+        --foreground: #003FF2;
+        --card: #FFFFFF;
+        --card-foreground: #003FF2;
+        --primary: #003FF2;
+        --primary-foreground: #FFFFFF;
+        --secondary: #FFFFFF;
+        --secondary-foreground: #003FF2;
+        --muted: #CCCCCC;
+        --muted-foreground: #666666;
+        --accent: #003FF2;
+        --accent-foreground: #FFFFFF;
+        --border: #CCCCCC;
+        --gradient-primary: linear-gradient(135deg, #003FF2, #003FF2);
+        --gradient-hero: linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%);
+        --gradient-card: linear-gradient(145deg, #FFFFFF 0%, #FFFFFF 100%);
+        --shadow-medium: 0 8px 25px -5px rgba(0, 63, 242, 0.35);
+        --shadow-large: 0 20px 40px -12px rgba(0, 63, 242, 0.45);
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        line-height: 1.6;
+        color: var(--foreground);
+        background: var(--background);
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 2.5px;
+        padding-right: 10px;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+      }
+      .btn-primary {
+        background: var(--gradient-primary);
+        color: var(--primary-foreground);
+        box-shadow: var(--shadow-medium);
+      }
+      .btn-primary:hover {
+        box-shadow: var(--shadow-large);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: 0;
+        color: white;
+        border: 2px solid white;
+      }
+      .btn-outline:hover {
+        box-shadow: var(--shadow-large);
+        transform: translateY(-2px);
+      }
+      .hero-section {
+        min-height: 100vh;
+        background: var(--gradient-hero);
+        display: flex;
+        align-items: center;
+        padding: 3rem 0;
+      }
+      .hero-grid {
+        display: grid;
+        gap: 3rem;
+        align-items: center;
+      }
+      @media (min-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+      @media (min-width: 1024px) {
+        .hero-title {
+          font-size: 4rem;
+        }
+      }
+      .gradient-text {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero-description {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: #ffffff;
+      }
+      .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+      .hero-features {
+        display: grid;
+        gap: 2rem;
+        color: #FFFFFF;
+      }
+      @media (min-width: 640px) {
+        .hero-features {
+          grid-template-columns: repeat(3, 1fr);
+          color:#FFFFFF;
+        }
+      }
+      .feature {
+        text-align: center;
+      }
+      .feature-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .services-section {
+        padding: 5rem 0;
+        background: #FFFFFF;
+      }
+      .carousel-container {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .carousel-wrapper {
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-large);
+        background: var(--gradient-card);
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      .service-slide {
+        width: 100%;
+        flex-shrink: 0;
+        padding: 3rem;
+        text-align: center;
+      }
+      .service-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid var(--primary);
+        background: #FFFFFF;
+        color: var(--primary);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .carousel-prev {
+        left: 1rem;
+      }
+      .carousel-next {
+        right: 1rem;
+      }
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 0.5rem;
+      }
+      .dot {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        background: var(--muted);
+        cursor: pointer;
+      }
+      .dot.active {
+        background: var(--primary);
+      }
+      .locations-section {
+        padding: 5rem 0;
+        background: #FFFFFF;
+      }
+      .locations-grid {
+        display: grid;
+        gap: 2rem;
+      }
+      @media (min-width: 768px) {
+        .locations-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .location-card {
+        background: var(--gradient-card);
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-medium);
+        text-align: center;
+      }
+      .location-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .contact-section {
+        padding: 5rem 0;
+        background: #FFFFFF;
+      }
+      .contact-grid {
+        display: grid;
+        gap: 2rem;
+      }
+      @media (min-width: 768px) {
+        .contact-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .contact-card {
+        background: var(--gradient-card);
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-large);
+      }
+      .social-buttons {
+        display: flex;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      .social-btn {
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .hero-info{
+        color:#FFFFFF;
+      }
+      .hero-section {
+      position: relative;
+      min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+  overflow: hidden;
+  background: var(--gradient-hero);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('bg.png') center/cover no-repeat;
+  filter: blur(5px) brightness(0.5);
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1; /* Content stays on top of blurred image */
+}
+
+.chat-icon{
+  height:50px;
+  width:50px;
+}
+.locations-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .locations-grid {
+    grid-template-columns: 1fr 1fr; /* card and image side by side */
+  }
+}
+
+.location-image img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-medium);
+  object-fit: cover;
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- Hero -->
+
+<section class="hero-section">
+  <div class="hero-bg"></div> <!-- New blurred background div -->
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1 class="hero-title">
+      TMS <span class="gradient-text">Mobile</span> Repairs
+      </h1>
+      <p class="hero-description">
+        Professional service by certified technicians. Genuine parts & warranty included.
+      </p>
+      <div class="hero-buttons">
+  <a href="#contactSection" class="btn btn-primary call-btn" data-number="+919150238812"> 📞 Call Now </a>
+  <a href="https://wa.me/919150238812" target="_blank" class="btn btn-outline">
+    <img class="chat-icon" src="chat-icon.png" /> Chat
+  </a>
+</div>
+      <div class="hero-features">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Fast Service</h3>
+          <p>Same-day repairs</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔒</div>
+          <h3>Warranty</h3>
+          <p>90 days guarantee</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🛠️</div>
+          <h3>Experts</h3>
+          <p>Certified technicians</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-info">
+      <div class="info-card">
+        <h3>Why Choose Us?</h3>
+        <ul>
+          <li>Trusted by 10,000+ customers</li>
+          <li>2 convenient locations</li>
+          <li>Affordable pricing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Services Carousel -->
+    <section class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>Comprehensive mobile repair solutions</p>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel-track" id="servicesTrack">
+              <div class="service-slide">
+                <div class="service-icon">📱</div>
+                <h3>Screen Repair</h3>
+                <p>Professional screen replacement</p>
+              </div>
+              <div class="service-slide">
+                <div class="service-icon">🔋</div>
+                <h3>Battery Replacement</h3>
+                <p>Quick battery replacement</p>
+              </div>
+              <div class="service-slide">
+                <div class="service-icon">💧</div>
+                <h3>Water Damage</h3>
+                <p>Expert recovery service</p>
+              </div>
+              <div class="service-slide">
+                <div class="service-icon">⚙️</div>
+                <h3>Software Issues</h3>
+                <p>Troubleshooting & updates</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn carousel-prev" id="prevBtn">‹</button>
+          <button class="carousel-btn carousel-next" id="nextBtn">›</button>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="locations-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Location</h2>
+      <p>Visit us </p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card">
+        <div class="location-icon">📍</div>
+        <h3 href="">Melakottaiyur</h3>
+        <p class="location-address">400 Vandalur to Kelambakkam Main Road </p>
+        <p class="location-address">Melakottaiyur</p>
+        <p class="location-address">Kandigai-Agaramthen </p>
+        <p class="location-address">Tamil Nadu 600127</p>
+        <a href="https://www.google.com/maps/place/TMS+Mobile+Service+Center/@12.8505703,80.135833,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5259004d1a5bc5:0x8979044a7227b75!8m2!3d12.8505703!4d80.1407039!16s%2Fg%2F11vqw1r3vy?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a>
+        
+      </div>
+      
+      <div class="location-image">
+        <img src="shop-image2.jpeg" alt="Location Image" />
+      </div>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card">
+        <div class="location-icon">📍</div>
+        <h3 href="">Ammapettai</h3>
+        <p class="location-address">Thiruporur - Guduvanchery Main Road </p>
+        <p class="location-address">Ammapettai</p>
+        <p class="location-address">Tamil Nadu 603110</p>
+        <a href="https://www.google.com/maps/place/TMS+Mobile+Service+Center/@12.7390128,80.128399,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5257ca5871c51f:0x2a3a6c4378f0ebaf!8m2!3d12.7390128!4d80.1309739!16s%2Fg%2F11mcth70wp?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a>
+        
+        
+      </div>
+      
+      <div class="location-image">
+        <img src="shop-photo.jpeg" alt="Location Image" />
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contactSection">
+  <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Phone</h3>
+            <p>+91 9150238812</p>
+            <h3>Email</h3>
+            <p>tmsmobileservicecenter@gmail.com</p>
+
+          </div>
+          <div class="contact-card">
+            <h3>Follow Us</h3>
+            <p>Stay updated on our offers.</p>
+            <div class="social-buttons">
+              <a href="https://www.instagram.com/tms_mobile_service_center?igsh=MXR6MjNndjFtaGl5bA==" class="social-btn"><img src="instagram.png" class="social_logo"></img></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const track = document.getElementById("servicesTrack"),
+          prev = document.getElementById("prevBtn"),
+          next = document.getElementById("nextBtn"),
+          dots = document.getElementById("carouselDots");
+        let index = 0,
+          auto;
+        function buildDots() {
+          dots.innerHTML = "";
+          [...track.children].forEach((_, i) => {
+            const d = document.createElement("button");
+            d.className = "dot" + (i === index ? " active" : "");
+            d.addEventListener("click", () => goTo(i));
+            dots.appendChild(d);
+          });
+        }
+        function update() {
+          track.style.transform = `translateX(-${100 * index}%)`;
+          [...dots.children].forEach((d, i) =>
+            d.classList.toggle("active", i === index)
+          );
+        }
+        function goTo(i) {
+          index = i;
+          update();
+          restart();
+        }
+        function nextSlide() {
+          index = (index + 1) % track.children.length;
+          update();
+        }
+        function prevSlide() {
+          index = (index - 1 + track.children.length) % track.children.length;
+          update();
+        }
+        function start() {
+          auto = setInterval(nextSlide, 4000);
+        }
+        function stop() {
+          clearInterval(auto);
+        }
+        function restart() {
+          stop();
+          start();
+        }
+        next.addEventListener("click", () => {
+          nextSlide();
+          restart();
+        });
+        prev.addEventListener("click", () => {
+          prevSlide();
+          restart();
+        });
+        buildDots();
+        update();
+        start();
+
+        // Call button functionality
+        function isMobile() {
+          return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+            navigator.userAgent
+          );
+        }
+
+        document.querySelectorAll(".call-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const number = btn.getAttribute("data-number");
+            if (isMobile()) {
+              window.location.href = `tel:${number}`;
+            } else {
+              // Scroll to Contact Us section on desktop
+              document
+                .getElementById("contactSection")
+                .scrollIntoView({ behavior: "smooth" });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
